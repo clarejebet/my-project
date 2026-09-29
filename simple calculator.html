@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><p></p>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <div"Calculator">
+<input type="text" id="display" readonly><br>
+  </div>
+<button onclick="cleardisplay()" > C</button>
+<button onclick="deletedisplay()" > Del</button>
+<button onclick="appendcharacter('/')" > /</button>
+<button onclick="appendcharacter('*')" > *</button><br>
+
+
+
+<button onclick="appendcharacter('9')">9</button>
+<button onclick="appendcharacter ('8')">8</button>
+<button onclick="appendcharacter('7')">7</button>
+<button onclick="subtractdisplay()" > -</button>
+<button onclick="adddisplay()" > +</button><br>
+
+<button  onclick="appendcharacter('6')">6</button>
+<button  onclick="appendcharacter('5')">5</button>
+<button  onclick="appendcharacter('4')">4</button><br>
+
+<button  onclick="appendcharacter('3')">3</button>
+<button  onclick="appendcharacter('2')">2</button>
+<button  onclick="appendcharacter('1')">1</button>
+<button onclick="calculate()" > =</button><br>
+
+<button  onclick="appendcharacter('0')">0</button>
+
+
+
+
+<script>
+ const display = document.getElementById('display');
+  function appendcharacter(character){display.value += character}
+
+  function cleardisplay(){display.value= ''}
+
+  function deletedisplay(){display.value = display.value.slice(0,-1)}
+
+  function adddisplay(){display.value += '+'}
+
+  function subtractdisplay(){display.value += '-'}
+
+  function calculate(){
+  try{display.value = eval(display.value);}catch (error){display.value = 'Error';}
+  
+  }
+  
+</script>
+
+
+</body>
+</html>
